@@ -22,7 +22,10 @@ module.exports = (req, res) => {
     .then(setContent(req.body))
     .then(loadFinished)
     .then((page) => page.render(fileName))
-    .then(() => fs.createReadStream(fileName).pipe(res))
+    .then(() => {
+      res.set('Content-Type', 'application/pdf')
+      fs.createReadStream(fileName).pipe(res)
+    })
     .catch((err) => {
       console.error(err);
       res.status(500).send(err);
