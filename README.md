@@ -12,9 +12,12 @@ npm i
 npm start
 ```
 
-server is running on `$PORT`
 post html content to `/pdf` to receive a rendered pdf
 
+
+#Environment Variables
+
+server is running on `$PORT`
 
 #TODO
 
