@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "pdf-renderer",
+      "script": "index.js",
+      "watch": false,
+      "exec_mode": "cluster",
+      "instances": 0
+    }
+  ]
+}
