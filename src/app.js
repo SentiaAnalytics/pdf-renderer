@@ -1,6 +1,6 @@
 const express = require('express');
-const renderPdf = require('./renderPdf');
-const bodyParser = require('body-parser')
+const renderPdf = require('./html2pdf');
+const bodyParser = require('body-parser');
 
 const app = express();
 
