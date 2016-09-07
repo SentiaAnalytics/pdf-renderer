@@ -23,7 +23,7 @@ server is running on `$PORT`
 
 save generated pdf files to tmp instead of `./files`
 
-#How to use 
+#How to use
 
 ####With curl
 
@@ -66,3 +66,8 @@ req.write("<html>\n<body><h1>Hello</h1></body>\n</html>");
 req.end();
 ```
 
+# Jenkins - CD
+## build variables
+`pdf_renderer_port: "3020"`
+
+Build Pipeline: cromwell-pdf-renderer-pipeline
