@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const PORT = process.env.PORT;
+const PORT = require('./config/config.json').PORT;
 
 if(!PORT) {
   console.log('Please provide a PORT');

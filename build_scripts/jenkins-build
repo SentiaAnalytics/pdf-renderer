@@ -1,0 +1,23 @@
+#! /bin/sh
+
+set -e
+
+echo npm version: "$(npm -v)"
+echo nodejs version: "$(node -v)"
+
+# clean the cache
+npm cache clean
+
+# Install all dependencies
+npm install
+npm run lint
+npm test
+
+# Remove dev dependencies
+npm prune --production
+
+# Create archive from build
+./build_scripts/jenkins-artifact
+
+# Check artifact built
+ls -lh ./deploy.tar.gz

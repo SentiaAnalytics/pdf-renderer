@@ -15,9 +15,9 @@ npm start
 post html content to `/pdf` to receive a rendered pdf
 
 
-#Environment Variables
+#Configuration Variables
 
-server is running on `$PORT`
+server is running on `PORT`
 
 #TODO
 
@@ -28,7 +28,7 @@ save generated pdf files to tmp instead of `./files`
 ####With curl
 
 ```
-curl -X POST -H "Cache-Control: no-cache" -H "Postman-Token: 06b9a7de-4d66-84a6-808b-3bb6e6176bcd" -d '<html>
+curl -X POST -H "Cache-Control: no-cache" -d '<html>
 <body><h1>Hello</h1></body>
 </html>' "http://localhost:8080/pdf"
 ```
@@ -44,8 +44,7 @@ var options = {
   "port": "8080",
   "path": "/pdf",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "1e211983-5b5c-3f82-b133-13ff563934fc"
+    "cache-control": "no-cache"
   }
 };
 
