@@ -1,10 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
+const PDF_OPTIONS = {
+  "format": "Letter",
+  "orientation": "portrait"
+};
 
 const app = express();
 
-app.use(bodyParser.text());
+app.use(bodyParser.text({limit: '2mb'}));
 
 // Ping function to ensure that the server is running from deploy job.
 app.get('/ping', (req, res) => {
@@ -16,7 +20,7 @@ app.post('/pdf', (req, res) => {
     res.status(400).send({msg: 'request body should contain html'});
     return;
   }
-  pdf.create(req.body).toStream((err, stream) => {
+  pdf.create(req.body, PDF_OPTIONS).toStream((err, stream) => {
     if (err) {
       console.log('Error while creating PDF', err);
       res.status(500).send({msg: 'Error while generating PDF'});
