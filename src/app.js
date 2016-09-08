@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
 const PDF_OPTIONS = {
-  "format": "Letter",
+  "format": "A4",
   "orientation": "portrait"
 };
 
