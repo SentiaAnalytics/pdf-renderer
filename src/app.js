@@ -4,7 +4,8 @@ const pdf = require('html-pdf');
 const PHANTOM_PATH = require('../config/config.json').PHANTOM_PATH;
 const PDF_DEFAULTS = {
   format: 'A4',
-  orientation: 'portrait'
+  orientation: 'portrait',
+  border: "10mm"
 };
 const pdfOptions = PHANTOM_PATH ? Object.assign({phantomPath: PHANTOM_PATH}, PDF_DEFAULTS) : PDF_DEFAULTS;
 
