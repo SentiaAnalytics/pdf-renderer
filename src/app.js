@@ -1,10 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
-const PDF_OPTIONS = {
-  'format': 'A4',
-  'orientation': 'portrait'
+const {PHANTOM_PATH} = require('../config/config.json')
+const PDF_DEFAULTS = {
+  format: 'A4',
+  orientation: 'portrait'
 };
+const pdfOptions = PHANTOM_PATH ? Object.assign({ phantomPath: PHANTOM_PATH}, PDF_DEFAULTS) : PDF_DEFAULTS;
+
+
+
 
 const app = express();
 
@@ -20,7 +25,7 @@ app.post('/pdf', (req, res) => {
     res.status(400).send({msg: 'request body should contain html'});
     return;
   }
-  pdf.create(req.body, PDF_OPTIONS).toStream((err, stream) => {
+  pdf.create(req.body, pdfOptions).toStream((err, stream) => {
     if (err) {
       console.log('Error while creating PDF', err);
       res.status(500).send({msg: 'Error while generating PDF'});
