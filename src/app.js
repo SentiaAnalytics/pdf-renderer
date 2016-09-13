@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
-const {PHANTOM_PATH} = require('../config/config.json');
+const PHANTOM_PATH = require('../config/config.json').PHANTOM_PATH;
 const PDF_DEFAULTS = {
   format: 'A4',
   orientation: 'portrait'
