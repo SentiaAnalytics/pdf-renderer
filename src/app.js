@@ -1,15 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const pdf = require('html-pdf');
-const {PHANTOM_PATH} = require('../config/config.json')
+const {PHANTOM_PATH} = require('../config/config.json');
 const PDF_DEFAULTS = {
   format: 'A4',
   orientation: 'portrait'
 };
-const pdfOptions = PHANTOM_PATH ? Object.assign({ phantomPath: PHANTOM_PATH}, PDF_DEFAULTS) : PDF_DEFAULTS;
-
-
-
+const pdfOptions = PHANTOM_PATH ? Object.assign({phantomPath: PHANTOM_PATH}, PDF_DEFAULTS) : PDF_DEFAULTS;
 
 const app = express();
 
