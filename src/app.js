@@ -11,13 +11,13 @@ const HTML_FOOTER = loadHtml('footer.html');
 const PDF_DEFAULTS = {
   format: 'A4',
   orientation: 'portrait',
-  border: "10mm",
+  border: '10mm',
   footer: {
-    height: "30mm",
+    height: '30mm',
     contents: HTML_FOOTER
   },
   header: {
-    height: "30mm"
+    height: '30mm'
   }
 };
 const pdfOptions = PHANTOM_PATH ? Object.assign({phantomPath: PHANTOM_PATH}, PDF_DEFAULTS) : PDF_DEFAULTS;
