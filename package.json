@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/grainger-eu/pdf-renderer.git"
+    "url": "git+ssh://git@github.com:SentiaAnalytics/pdf-renderer.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/grainger-eu/pdf-renderer#readme",
+  "homepage": "https://github.com/SentiaAnalytics/pdf-renderer.git",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
